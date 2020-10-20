@@ -49,4 +49,3 @@ Alternatively,
 - [x] This is a complete item
 - [ ] This is an incomplete item
 
-When you include a task list in the first comment of an Issue, you will see a helpful progress bar in your list of issues.
