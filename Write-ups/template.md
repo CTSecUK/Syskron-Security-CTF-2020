@@ -2,6 +2,9 @@
 ![Category](http://img.shields.io/badge/Category-<CATEGORY>-orange?style=for-the-badge) ![Points](http://img.shields.io/badge/Points-<VALUE>-brightgreen?style=for-the-badge)
 
 ## Notes
+Add images like this;
+
+![myimage](images/password_check.png)
 
 You can add Links like this [link to Google!](http://google.com)
 
