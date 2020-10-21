@@ -1,4 +1,4 @@
-# [ Challenge ] - Security Framework
+# Security Framework
 
 ![Category](http://img.shields.io/badge/Category-Trivia-orange?style=for-the-badge) ![Points](http://img.shields.io/badge/Points-25-brightgreen?style=for-the-badge)
 
