@@ -82,7 +82,7 @@ We could continue to dissassemble and try to understand how this function works 
 
 Lets jump over to an online Ascii Conversion Tool, [dcode.fr](https://www.dcode.fr/ascii-code).
 
-Putting the string into the inpit box and hitting decrypt shows the flag on the left and sure enough, the Ascii conversion methos is listed as "**OCT (N Digits)**" as hinted at by the function in Radare2.
+Putting the string into the input box and hitting the "Decrypt/Convert" button shows the flag on the left and sure enough, the Ascii conversion method is listed as "**OCT (N Digits)**" as was hinted at by the function in Radare2.
 
 ![genserial reverse and compare](images/keygen_ascii_dcode.png)
 
