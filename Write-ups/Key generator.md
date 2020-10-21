@@ -76,6 +76,10 @@ After returning from the **genserial** function another call is made to a functi
 
 We could continue to dissassemble and try to understand how this function works but before we go down that path, lets instead see if we can do anything with the new string we've been given. 
 
+```
+1639171916391539162915791569103912491069173967911091119123955915191639156967955916396391439125916296395591439609104911191169719175
+```
+
 Lets jump over to an online Ascii Conversion Tool, [dcode.fr](https://www.dcode.fr/ascii-code).
 
 Putting the string into the inpit box and hitting decrypt shows the flag on the left and sure enough, the Ascii conversion methos is listed as "**OCT (N Digits)**" as hinted at by the function in Radare2.
