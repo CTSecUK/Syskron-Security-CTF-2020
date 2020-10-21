@@ -10,11 +10,11 @@
 
 After downloading, we'll first run the binaryv to try and understand what it is doing. 
 
-It seems to ask for some input (a machine number) and then returns if its valid.
+It seems to ask for some input (a machine number) and then returns something depending on whethere the input was valid.
 
 ![Run Invalid](images/keygen_run_keygen_invalid_input.png)
 
-Running it again and entering the suggested example "**machine number**" we can see a differnet output.
+Running it again and entering the suggested example "**machine number**" we can see a different output.
 
 ![Run valid](images/keygen_run_keygen_valid_input.png)
 
