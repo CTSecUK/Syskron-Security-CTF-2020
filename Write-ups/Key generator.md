@@ -8,7 +8,9 @@
 
 ![Details](images/keygen_details.png)
 
-After downloading we first erun the binaryv to try and understand what it is doing. It seems to ask for some input (a machine number) and then returns if its valid.
+After downloading, we'll first run the binaryv to try and understand what it is doing. 
+
+It seems to ask for some input (a machine number) and then returns if its valid.
 
 ![Run Invalid](images/keygen_run_keygen_invalid_input.png)
 
