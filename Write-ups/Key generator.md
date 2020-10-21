@@ -2,21 +2,36 @@
 
 ![Category](http://img.shields.io/badge/Category-Wednesday-orange?style=for-the-badge) ![Points](http://img.shields.io/badge/Points-300-brightgreen?style=for-the-badge)
 
-![tag-reverse-engineering](https://img.shields.io/badge/Tag-reverse-engineering-blue?style=plastic)
+![Tag](https://img.shields.io/badge/Tag-reverse-engineering-blue?style=plastic)
 
 ## Details
 
-After downloading and extracting the file we see a .db extension, running the file command on it confirms it's a SQLLite Database.
+![Details](images/keygen_details.png)
+
+After downloading we first erun the binaryv to try and understand what it is doing. It seems to ask for some input (a machine number) and then returns if its valid.
 
 ![Run Invalid](images/keygen_run_keygen_invalid_input.png)
 
+Running it again and entering the suggested example "Machine Number" we can see a differnet output.
+
 ![Run valid](images/keygen_run_keygen_valid_input.png)
+
+Ok lets open this up in radare2 and analyse it!
+We start by running "**aaa**" to analyse and autoname functions.
+Next we run "**afl**" to list the discovered functions.
+Heer we can see the function "**main**" which is usualy a good place to start, so we use the command "**s main**" to seek to main and the "**VV**" to open visual view. (if your view doesnt look like the below press the "**P**" key to cyle through the visual display options.
 
 ![Radare2 Analyse](images/keygen_r2_step1.png)
 
-![View Main Function](images/keygen_r2_step1.png)
+Ok so lets start looking through the main function tio see if we can understand whats going on.
+
+![View Main Function](images/keygen_r2_step2.png)
+
+It looks as though lost of information is being output using the "**puts**" function befor asking for an input and then calling the function "**sym.imp.strlen**" on that value. It appears the value is then compared to see if it is equal to 7 (characters long) before jumping to another part of the code if it is.
+So that now explains how the **"Valid machine Format"** check is taking place!
 
 ![strlen](images/keygen_r2_strlen.png)
+
 
 ![call genserial](images/keygen_seek_genserial.png)
 
