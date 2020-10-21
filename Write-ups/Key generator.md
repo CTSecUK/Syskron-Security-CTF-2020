@@ -2,7 +2,7 @@
 
 ![Category](http://img.shields.io/badge/Category-Wednesday-orange?style=for-the-badge) ![Points](http://img.shields.io/badge/Points-300-brightgreen?style=for-the-badge)
 
-![Tag](https://img.shields.io/badge/Tag-reverse-engineering-blue?style=plastic)
+![Tag](https://img.shields.io/badge/Tag-reverse%20engineering-blue?style=plastic)
 
 ## Details
 
