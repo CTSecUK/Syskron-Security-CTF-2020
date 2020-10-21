@@ -26,11 +26,11 @@ Next we run "**afl**" to list the discovered functions.
 
 Here we can see the function "**main**" which is usualy a good place to start, so we use the command "**s main**" to seek to main, and the command "**VV**" to open the visual view. 
 
-(If your view doesnt look like the below press the "**P**" key to cyle through the visual display options.
-
 ![Radare2 Analyse](images/keygen_r2_step1.png)
 
 Ok so lets start looking through the main function to see if we can understand whats going on.
+
+(If your view doesnt look like the below press the "**P**" key to cyle through the visual display options)
 
 ![View Main Function](images/keygen_r2_step2.png)
 
