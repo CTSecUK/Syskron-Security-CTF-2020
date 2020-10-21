@@ -24,7 +24,7 @@ We start by running "**aaa**" to analyse and autoname functions.
 
 Next we run "**afl**" to list the discovered functions.
 
-Here we can see the function "**main**" which is usualy a good place to start, so we use the command "**s main**" to seek to main and the "**VV**" to open visual view. 
+Here we can see the function "**main**" which is usualy a good place to start, so we use the command "**s main**" to seek to main, and the command "**VV**" to open the visual view. 
 
 (If your view doesnt look like the below press the "**P**" key to cyle through the visual display options.
 
