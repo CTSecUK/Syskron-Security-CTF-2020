@@ -17,9 +17,13 @@ Running it again and entering the suggested example "Machine Number" we can see 
 ![Run valid](images/keygen_run_keygen_valid_input.png)
 
 Ok lets open this up in radare2 and analyse it!
+
 We start by running "**aaa**" to analyse and autoname functions.
+
 Next we run "**afl**" to list the discovered functions.
-Heer we can see the function "**main**" which is usualy a good place to start, so we use the command "**s main**" to seek to main and the "**VV**" to open visual view. 
+
+Here we can see the function "**main**" which is usualy a good place to start, so we use the command "**s main**" to seek to main and the "**VV**" to open visual view. 
+
 (If your view doesnt look like the below press the "**P**" key to cyle through the visual display options.
 
 ![Radare2 Analyse](images/keygen_r2_step1.png)
