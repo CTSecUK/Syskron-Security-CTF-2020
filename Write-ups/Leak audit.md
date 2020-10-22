@@ -14,7 +14,7 @@ After downloading and extracting the file we see a .db extension, running the fi
 BB-inDu57rY-P0W3R-L34k3r2.db: SQLite 3.x database, last written using SQLite version 3033000
 ```
 
-I'm much more comfortable with MySQL so i head to teh website [RebaseData.com](https://www.rebasedata.com/convert-sqlite-to-mysql-online) to convert it.
+I'm much more comfortable with MySQL so i head to the website [RebaseData.com](https://www.rebasedata.com/convert-sqlite-to-mysql-online) to convert it.
 
 ![Screenshot](images/leak_audit_screenshot.png)
 
