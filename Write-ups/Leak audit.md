@@ -30,7 +30,7 @@ Archive:  result.zip
 Next we need to create a blank MySQL databse to write the dumped database into;
 
 ```sql
-[jaxigt@MBA ~]$ sudo mysql
+>$ sudo mysql
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 4
 Server version: 10.5.5-MariaDB Arch Linux
@@ -49,14 +49,14 @@ Bye
 Back outside of MySQL we can import the database like below;
 
 ```
-[jaxigt@MBA leak_audit]$ sudo mysql -p leak_audit < data.sql 
+>$ sudo mysql -p leak_audit < data.sql 
 Enter password: 
 ```
 
 Now we head back in MySQL client and select the database;
 
 ```sql
-[jaxigt@MBA leak_audit]$ sudo mysql
+>$ sudo mysql
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 9
 Server version: 10.5.5-MariaDB Arch Linux
