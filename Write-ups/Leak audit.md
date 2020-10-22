@@ -14,9 +14,9 @@ After downloading and extracting the file we see a .db extension, running the fi
 BB-inDu57rY-P0W3R-L34k3r2.db: SQLite 3.x database, last written using SQLite version 3033000
 ```
 
-I'm much moref comfortable with MySQL so i head to teh website [RebaseData.com](https://www.rebasedata.com/convert-sqlite-to-mysql-online) to convert it.
+I'm much more comfortable with MySQL so i head to teh website [RebaseData.com](https://www.rebasedata.com/convert-sqlite-to-mysql-online) to convert it.
 
-![Screenshot](images/leaked_audit_screenshot.png)
+![Screenshot](images/leak_audit_screenshot.png)
 
 I download the converted file, move it from my Downloads folder and unzip it.
 
@@ -46,14 +46,14 @@ MariaDB [(none)]> exit
 Bye
 ```
 
-Back outside of MySQL we can import the database like below;
+Back at eth command prompt we can import the database like below;
 
 ```
 >$ sudo mysql -p leak_audit < data.sql 
 Enter password: 
 ```
 
-Now we head back in MySQL client and select the database;
+Now we head back into mysql client and select the database;
 
 ```sql
 >$ sudo mysql
@@ -71,7 +71,7 @@ You can turn off this feature to get a quicker startup with -A
 
 Database changed
 ```
-Lets have a look at what tables are in the database;
+OK, Next Lets have a look at what tables are in the database;
 
 ```sql
 MariaDB [leak_audit]> show tables;
@@ -84,7 +84,7 @@ MariaDB [leak_audit]> show tables;
 2 rows in set (0.000 sec)
 ```
 
-OK, that's nice and simple and we're only interested in the "personal" table, so lets try outputing a few rows to see what the data looks like;
+That's nice and simple and we're only interested in the "personal" table, so lets try outputing a few rows to see what the data looks like;
 
 ```sql
 MariaDB [leak_audit]> select * from personal LIMIT 5;
@@ -123,7 +123,7 @@ MariaDB [leak_audit]> SELECT password, COUNT(password) FROM personal GROUP BY pa
 ```
 The final piece of information we need to look for is "**passwords protected with bcrypt**". 
 
-I happen to know that BCrypt passwords start with $2a$ or $2b$ but if you didn't know this then a quick check on google will easily reveal this information;
+I happen to know that BCrypt hashes start with $2a$ or $2b$ but if you didn't know this then a quick check on google will easily reveal this information;
 
 [https://en.wikipedia.org/wiki/Bcrypt](https://en.wikipedia.org/wiki/Bcrypt)
 
@@ -156,7 +156,9 @@ MariaDB [leak_audit]> SELECT * FROM personal where password LIKE "$2a$% OR passw
 +--------+---------------+-----------+-----------------------+--------------------------------+---------+--------------------------------------------------------------+------------+
 21 rows in set (0.001 sec)
 ```
-So now we have the count of 21 records, we have all the info needed to submit the flag. putting all the information tother we get a flag of;
+So now we have the count of 21 records, we have all the info needed to submit the flag. 
+
+Putting all the information tother we get a flag of; 
 
 ***syskronCTF{376_mah6geiVoo_21}***
 
