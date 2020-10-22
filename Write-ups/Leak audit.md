@@ -110,7 +110,7 @@ MariaDB [leak_audit]> select count(number) from personal;
 +---------------+
 1 row in set (0.000 sec)
 ```
-So now we have teh first part of our flag, next we need look for "**duplicate passwords**"... we can do this with the below SQL query;
+So now we have the first part of our flag, next we need look for "**duplicate passwords**". We can do this with the below SQL query;
 
 ```sql
 MariaDB [leak_audit]> SELECT password, COUNT(password) FROM personal GROUP BY password HAVING COUNT(password) > 1;
@@ -121,7 +121,10 @@ MariaDB [leak_audit]> SELECT password, COUNT(password) FROM personal GROUP BY pa
 +------------+-----------------+
 1 row in set (0.001 sec)
 ```
-The final piece of information we need to look for is "**passwords protected with bcrypt**". I happen to know that BCrypt passwords start with $2a$ or $2b$ but if you didint know this information a quickj check google can reveal this information;
+The final piece of information we need to look for is "**passwords protected with bcrypt**". 
+
+I happen to know that BCrypt passwords start with $2a$ or $2b$ but if you didn't know this then a quick check on google will easily reveal this information;
+
 [https://en.wikipedia.org/wiki/Bcrypt](https://en.wikipedia.org/wiki/Bcrypt)
 
 ```sql
