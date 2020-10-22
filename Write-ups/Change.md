@@ -9,7 +9,7 @@
 
 First let's [download](https://ctf2020.syskron-security.com/files/6f55b76d0508d33445712bb4aba8e112/change.jpg?token=eyJ1c2VyX2lkIjo2MTIsInRlYW1faWQiOjI1MiwiZmlsZV9pZCI6NX0.X5FZTw.R0j3vQSz6n-UTZDgBiHoCigJ6m0) and take a look at the the image.
 
-![Image](images/change.jpg =600x342)
+![Image](images/change.jpg | width=600)
 
 OK, nothing obvious here so lets look at some basic stegonography tools.
 
