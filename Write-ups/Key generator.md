@@ -8,7 +8,7 @@
 
 ![Details](images/keygen_details.png)
 
-After downloading, we'll first run the binaryv to try and understand what it is doing. 
+After downloading, we'll first run the binary file to try and understand what it is doing. 
 
 It seems to ask for some input (a machine number) and then returns something depending on whethere the input was valid.
 
