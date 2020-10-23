@@ -9,7 +9,8 @@
 
 ![Details](images/firmware_update_details.png)
 
-First we download, the file an unzip it. This  presents us with 3 further zip files
+First we download, the file an unzip it. 
+This presents us with 3 further zip files;
 
 ```
 [jaxigt@MBA firmware_update]$ unzip LibrePLC_firmware_pack.zip
@@ -19,7 +20,7 @@ Archive:  LibrePLC_firmware_pack.zip
  extracting: LibrePLC_fw_1.0.2.zip 
  ```
 
-Next we try to unzip the first file and we are pormpted for a password 
+Next we try to unzip the first file and we are prompted for a password 
 
 ```
 [jaxigt@MBA firmware_update]$ unzip LibrePLC_fw_1.0.0.zip 
@@ -27,7 +28,7 @@ Archive:  LibrePLC_fw_1.0.0.zip
 [LibrePLC_fw_1.0.0.zip] LibrePLC_fw_1.0.0.bin password: 
 ```
 
-Let's try using the note provided in the challeng details as the password ("**5157CA3SDGF463249FBF**").
+Let's try using the note provided in the challenge details as the password ("**5157CA3SDGF463249FBF**").
 
 ```
 [jaxigt@MBA firmware_update]$ unzip LibrePLC_fw_1.0.0.zip 
@@ -37,7 +38,7 @@ Archive:  LibrePLC_fw_1.0.0.zip
   inflating: key                     
 ```
 
-This appears to work and gives us a further 2 files; "**key**" and "**LibrePLC_fw_1.0.0.bin**"".
+This appears to work and gives us a further 2 files; "**key**" and "**LibrePLC_fw_1.0.0.bin**".
 
 Let's try unzipping the other zip files with the same pasword;
 
@@ -48,7 +49,7 @@ Archive:  LibrePLC_fw_1.0.1.zip
 password incorrect--reenter: 
 ```
 
-We can see that thos will require a different password... so lets look at the  files we just extracted.
+OK, so we can see that those fiels will require a different password. Let's look at the  files we just extracted.
 
 Running the "**file**" command on these two files show us the following;
 
@@ -58,7 +59,7 @@ key:                   Python script, ASCII text executable
 LibrePLC_fw_1.0.0.bin: data
 ```
 
-We can see that the "**key**" file is just ascii text and most likley a python script so lets look at that before looking at the .bin file.
+We can see that the "**key**" file is just "**ascii text**" and most likley a "**python script**" so lets take a closer look at that before moving on the "**.bin**" file.
 
 ```python
 #!/usr/bin python3
@@ -88,37 +89,39 @@ def keys (OOOOOOOO00OOOOOOO ):#line:20
 print (keys (get_it (check ())))
 ```
 
-From looking at this file we can determine that the script expects to be passed an argument, then opens a file and reads it as binary before performing a sha256 and hexdigest function on some data and then replacing many of the characters with different ones.
+From looking at this file we can determine that the script expects to be passed an argument, then opens a file and reads it as binary before performing "**sha256**" and "**hexdigest**" functions on some data, as well as "**replacing**" some characters with different ones.
 
-Lets run the script to see what happens.
+Let's try running the script to see what happens;
 
 ```
 [jaxigt@MBA firmware_update]$ python key
 No key for you
 ```
 
-As expected we've not passed it an argument so it just returns "**No key for you**".
+As expected, we've not passed it an argument, so it just returns "**No key for you**".
 
-Going bac to the script code, while at first clance it might look like the variables names are missing or all the same (a string of 18x 0's) if you look closely you will notice that some are the capital letter ""**O**" while others are number"**0**".
+Going back to the scripts code, while at first clance it might look like the variables names are all the same (a string of 18x 0's) or have been redacted if you look closely you will notice that some are the capital letter ""**O**" while others are number"**0**". 
 
-I open the file in visual Studio Code to make ediiting a little easier and replace all of the variables which are the same with a variable name to make the code more readable and remove the unneccessary spaces;
+I open the file in visual Studio Code to make ediiting a little easier and replace all of the variables which are the same with a variable name to make the code more readable and tidy up some spacing;
 
 ![key.py in VSCode](images/firmware_update_vscode.png)
 
-Ok now the code is a little easier to read. We can see that the script needs to be passed a file as an argument which it will open and read as binary before perfoming functions and returning a value taht is printed to the screen.
+Ok now the code is a little easier to read, we can see that the script needs to be passed a file as an argument which it will open and read as binary before perfoming functions on the read data and returning a value that is printed to the screen.
 
-The only files we have to work with are the zipped files and the recenetly unziped "**LibrePLC_fw_1.0.0.bin**".
+The only files we have to work with are the zip files and the recenetly unziped "**LibrePLC_fw_1.0.0.bin**".
 
-Running the python script and passing the "**LibrePLC_fw_1.0.0.bin**" as an argument gives us a new output.
+So lets try running the python script and passing the "**LibrePLC_fw_1.0.0.bin**" as an argument, to see if that gives us a new output;
 
 ```
 [jaxigt@MBA firmware_update]$ python key LibrePLC_fw_1.0.0.bin 
 7SYSCC3076BDCTF13CC9CTFA6CB7SYSCC3076CD56579549EC5AB533EN03AFC1F9N
 ```
 
+And it does!
+
 > I should point out that it is not neccessary to beautify the code and replace the variable names. Running the original script would produce the same output, but I wanted to understand what the code was doing!
 
-So now lets try using thios new string as the password to unzip the next file;
+So now let's try using this new string as the password to unzip the next file;
 
 ```
 [jaxigt@MBA firmware_update]$ unzip LibrePLC_fw_1.0.1.zip 
@@ -129,14 +132,14 @@ Archive:  LibrePLC_fw_1.0.1.zip
 
 And it works. We have a new file called "**LibrePLC_fw_1.0.0.bin**", but no key file this time.
 
-Again, before analysing this binary file, lets try runnining the same key.py script against this new bin file.
+Again, before analysing the new binary file, let's first try runnining the same "**key.py**" script against this new "**.bin**" file.
 
 ```
 [jaxigt@MBA firmware_update]$ python key LibrePLC_fw_1.0.1.bin 
 CSYS0BBA60E46ABB19C5BC0CSYS0CCK60EQ1NC41E2C5DDA4C5C7D45E096162
 ```
 
-And now we have another string.... lets try unzipping the final file with this new string;
+And now we have another string.... let's try unzipping the final file with this new string;
 
 ```
 [jaxigt@MBA firmware_update]$ unzip LibrePLC_fw_1.0.2.zip 
@@ -145,46 +148,20 @@ Archive:  LibrePLC_fw_1.0.2.zip
   inflating: LibrePLC_fw_1.0.2.bin 
 ```
 
-And now we have sucessfully unzipped all three files!
+We have sucessfully unzipped all three files! Nice!!!
 
-But we still dont have a flag!?!
+But wait... we still dont have a flag!?! Perhaps we finaly need to dissasemble or debug the "**.bin**" files?
 
-Perhaps we finaly need to dissasemble or debug the .bin files?
+Before we do though, let's try some basics..
 
-Before we do though, let's start with some basics..
-
-The "**file**" command doesnt give us much to go on;
+Running the "**file**" command against the "**.bin**" files doesnt give us much to go on;
 
 ```
 [jaxigt@MBA firmware_update]$ file LibrePLC_fw_1.0.2.bin 
 LibrePLC_fw_1.0.2.bin: data
 ```
 
-```
-[jaxigt@MBA firmware_update]$ rabin2 -I LibrePLC_fw_1.0.2.bin 
-baddr    0x0
-binsz    230237
-bits     64
-canary   false
-crypto   false
-endian   little
-havecode false
-laddr    0x0
-linenum  false
-lsyms    false
-maxopsz  16
-minopsz  1
-nx       false
-pcalign  0
-pic      false
-relocs   false
-sanitiz  false
-static   true
-stripped false
-va       false
-```
-
-Before we jump into "**radare2**" we'll check some final low hanging fruit... lets check from **strings over 8 characters long**;
+Before we jump into "**radare2**" though, we'll check some final low-hanging fruit... let's check from **strings over 8 characters long**;
 
 ```
 [jaxigt@MBA firmware_update]$ strings -n 8 LibrePLC_fw_1.0.2.bin 
@@ -243,4 +220,4 @@ kY#@`4'zR
 
 Bingo!
 
-Right at the top of the strings outpuit we have the flag for which is **syskronCTF{s3Cur3_uPd4T3}**
+Right at the top of the strings output we have the flag for which is **syskronCTF{s3Cur3_uPd4T3}**
