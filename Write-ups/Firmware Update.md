@@ -1,4 +1,4 @@
-# Firmware update
+# Firmware Update
 
 ![Category](http://img.shields.io/badge/Category-Friday-orange?style=for-the-badge) ![Points](http://img.shields.io/badge/Points-500-brightgreen?style=for-the-badge)
 
