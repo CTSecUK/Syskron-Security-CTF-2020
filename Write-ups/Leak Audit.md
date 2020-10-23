@@ -1,4 +1,4 @@
-# Leak audit
+# Leak Audit
 
 ![Category](http://img.shields.io/badge/Category-Tuesday-orange?style=for-the-badge) ![Points](http://img.shields.io/badge/Points-200-brightgreen?style=for-the-badge)
 
