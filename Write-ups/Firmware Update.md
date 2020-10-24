@@ -220,4 +220,4 @@ kY#@`4'zR
 
 Bingo!
 
-Right at the top of the strings output we have the flag for which is **syskronCTF{s3Cur3_uPd4T3}**
+Right at the top of the strings output we have the flag, which is: **syskronCTF{s3Cur3_uPd4T3}**
