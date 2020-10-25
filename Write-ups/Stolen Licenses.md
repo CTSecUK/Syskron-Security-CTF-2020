@@ -12,13 +12,13 @@ I'll start by say that this was a tough challenge, especially given it was only 
 
 With that in mind, I didn't really start making any progress with it until i'd unlocked a couple of hints, but I'll walk you through the process I took to get there.
 
-I started as it suggested by downlaoding the "licesnee.zip" file fromm the link provided (using the password provided to access the download site).
+I started as it suggested by downloading the "**license.zip**" file from the linked download site, using the password provided.
 
-Once downloaded, tryying to extract it shows the file is password protected and so I set about trying to crack it as the challenege details suggest.
+Once downloaded, trying to extract the zip file shows the file is password protected and so I set about trying to crack it as the challenege details suggest.
 
 First i run "**zip2john**" to extract the hash from the zip file. 
 
-The output shows us that the zip file contains 100 image files so i've abreaviated the output;
+The output from this command shows us that the zip file contains 1000 image files so I've cut out most of the output;
 
 ```
 [jaxigt@MBA stolen_licenses]$ zip2john licenses.zip >zipfile.hash                       
@@ -35,7 +35,7 @@ If that is not the case, the hash may be uncrackable. To avoid this, use
 option -o to pick a file at a time.
 ```
 
-Likewise, cat'ing the hash file shows a huge hash key so i've just copied the end which shows the important info;
+Likewise, cat'ing the hash file shows a huge hash key so i've just copied the last couple of lines which show the important info;
 
 ```
 08ae81a67c1d412301f7311bf82eb278ae05e4db28071564a4741653d2ffc39547bcbd7bb3859a99c15f1550b63d665508798c12a6164e18549ca98b7a*$/pkzip2$::licenses.zip:img/B999582-0055.png, img/B999582-0001.png, img/B999582-0002.png:licenses.zip
