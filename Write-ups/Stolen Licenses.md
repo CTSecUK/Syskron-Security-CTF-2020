@@ -193,7 +193,7 @@ e Ui
 
 ```
 
-Here we can see the serial key listed in the output.
+Here we can see the serial key is now listed in the output.
 
 Next we need to add and tweak some code to extract the key from the output using "**regular expressions**.; 
 
