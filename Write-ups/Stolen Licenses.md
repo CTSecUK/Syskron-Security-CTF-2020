@@ -54,11 +54,11 @@ Press 'q' or Ctrl-C to abort, almost any other key for status
 Session completed
 ```
 
-I even tried some hybrid and brute force cracking, but with still no progress, this is where i came unstuck an needed to use one the availble hints.
+I even tried some hybrid and brute force cracking, but with still no progress, this is where i came un-stuck an needed to use one of the availble hints.
 
 ![Hint 1](images/stolen_licenses_hint1.png)
 
-Ok so with this new information we have a new angle of attack. I could have just skimmed down the page and create a wordlist manually using the new words but I'm a bit lazy so i used "**cewl**" to do it for me;
+Armed with this new information we have a new angle of attack. I could have just skimmed down the page and create a wordlist manually using the new words but I'm a bit lazy so i used "**cewl**" to do it for me;
 
 ```
 [jaxigt@MBA stolen_licenses]$ cewl -d 1 -m 6 https://www.merriam-webster.com/words-at-play/new-words-in-the-dictionary >passwords.txt
@@ -82,7 +82,7 @@ Within a few seconds we have the password! - **nosocomephobia**
 
 Now we can unzip the files and finaly get to the real work on this challenge.
 
-Looking at the files in the "***extracted img folder***" we can see 100 images all very simlar to the one below, but each with a "**unique serial**" and "**activation code**";
+Looking at the files in the "***extracted img folder***" we can see 1000 images all very simlar to the one below, but each with a "**unique serial**" and "**activation code**";
 
 ![Hint 1](images/stolen_licenses_license.png)
 
