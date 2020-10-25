@@ -95,11 +95,11 @@ To resolve the first, we will need to use some sort of OCR, but for the secode, 
 
 ![Hint 1](images/stolen_licenses_hint1.png)
 
-Hmm... at first this seemsed fairly unhelpful, but if we refer to an earlier challenge "**Check digit**" (one of the simple Trivia catagory ones) we are reminded of the below;
+Hmm... at first this seemed fairly unhelpful, but if we refer to an earlier challenge "**Check digit**" (one of the simple Trivia catagory ones) we are reminded of the below;
 
 ![Hint 1](images/check_digit_details.png)
 
-The detailed answer to that challenge can be found in it's writeup, but the method implemented is "**ISO/IEC 7812**" and with a bit of further Googling it is revealed that under this standard "**check digits**" are calcuated calculated using the "**Luhn algorithm**"
+The detailed answer to that challenge can be found in it's own writeup, but the method implemented is "**ISO/IEC 7812**" and with a bit of further Googling it is revealed that under this standard "**check digits**" are calcuated calculated using the "**Luhn algorithm**"
 
 We'll come back to teh Luhn algorithm later but furst lest start writing some code to do what we need.
 
