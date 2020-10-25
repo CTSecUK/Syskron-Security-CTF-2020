@@ -82,14 +82,14 @@ Within a few seconds we have the password! - **nosocomephobia**
 
 Now we can unzip the files and finaly get to the real work on this challenge.
 
-Looking at the files in the "***extracted img folder***" we can see 1000 images all very simlar to the one below, but each with a "**unique serial**" and "**activation code**";
+Looking at the files in the "***extracted img folder***" we can see 1000 images all very simlar to the one below, but each with a "**unique serial**" and "**activation key**";
 
 ![Hint 1](images/stolen_licenses_license.png)
 
-So now we have to challenges.
+So now we have two challenges;
 
-1. How to extract the data from each file (we cant manually copy it out of 1000 files)!
-2. How do we know which keys are valid?
+1. How to extract the data from each file (we cant manually copy it out from 1000 files)!
+2. How do we check which keys are valid?
 
 To resolve the first, we will need to use some sort of OCR, but for the secode, I needed another hint.
 
