@@ -99,9 +99,9 @@ Hmm... at first this seemed fairly unhelpful, but if we refer to an earlier chal
 
 ![Hint 1](images/check_digit_details.png)
 
-The detailed answer to that challenge can be found in it's own writeup, but the method implemented is "**ISO/IEC 7812**" and with a bit of further Googling it is revealed that under this standard "**check digits**" are calcuated calculated using the "**Luhn algorithm**"
+The detailed answer to that challenge can be found in it's own writeup, but the method implemented is "**ISO/IEC 7812**" and with a bit of further Googling it is revealed that under this standard "**check digits**" are calcuated calculated using the "**Luhn algorithm**". 
 
-We'll come back to teh Luhn algorithm later but furst lest start writing some code to do what we need.
+We'll come back to the Luhn algorithm in a bit, but first let's start writing some code to do what we need.
 
 First we'll try a python OCR library to open an image and try to read the text from it;
 
