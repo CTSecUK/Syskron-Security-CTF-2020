@@ -54,7 +54,7 @@ Press 'q' or Ctrl-C to abort, almost any other key for status
 Session completed
 ```
 
-I even tried some hybrid and brute force cracking, but with still no progress, this is where i came un-stuck an needed to use one of the availble hints.
+I even tried some hybrid and brute force cracking, but with still no progress, this is where i came un-stuck and needed to use one of the availble hints.
 
 ![Hint 1](images/stolen_licenses_hint1.png)
 
