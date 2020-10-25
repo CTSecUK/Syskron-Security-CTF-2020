@@ -38,7 +38,7 @@ option -o to pick a file at a time.
 Likewise, cat'ing the hash file shows a huge hash key so i've just copied the last line which show the important info;
 
 ```
-9mins508798c12a6164e18549ca98b7a*$/pkzip2$::licenses.zip:img/B999582-0055.png, img/B999582-0001.png, img/B999582-0002.png:licenses.zip
+508798c12a6164e18549ca98b7a*$/pkzip2$::licenses.zip:img/B999582-0055.png, img/B999582-0001.png, img/B999582-0002.png:licenses.zip
 ```
 
 Here we can see we're dealing with a "**pkzip2**" file. Hashcat does not currently support PKZip2 hashes so we'll need to stick with "**JTR**".
