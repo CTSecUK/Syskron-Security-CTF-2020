@@ -116,7 +116,7 @@ image = Image.open(image_file)
 print(tesserocr.image_to_text(image))
 ```
 
-runnig this code we can see that it does indeed perform some OCR on the image but hasn't managed to extract any of the important data we needed.
+Running this code we can see that it does indeed perform some OCR on the image but hasn't managed to extract any of the important data we needed.
 
 ```
 [jaxigt@MBA stolen_licenses]$ python ocr.py img/B999582-0001.png 
