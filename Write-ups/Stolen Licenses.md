@@ -91,7 +91,7 @@ So now we have two challenges;
 1. How to extract the data from each file (we cant manually copy it out from 1000 files)!
 2. How do we check which keys are valid?
 
-To resolve the first, we will need to use some sort of OCR, but for the secode, I needed another hint.
+To resolve the first, we will need to use some sort of OCR, but for the second, I needed another hint.
 
 ![Hint 1](images/stolen_licenses_hint1.png)
 
