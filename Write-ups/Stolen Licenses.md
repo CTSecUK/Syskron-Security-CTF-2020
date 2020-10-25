@@ -133,7 +133,7 @@ only valid if purchased together with a machine
 
 ``` 
 
-A bit more research online and we find a stack overflow post in relation to a similar OCR python library [https://stackoverflow.com/questions/55994807/pytesseract-fail-to-recognise-digits-from-image](https://stackoverflow.com/questions/55994807/pytesseract-fail-to-recognise-digits-from-image) suggested adding the following code to optimise the processsing of the image;
+A bit more research online and we find a stack overflow post in relation to a similar OCR python library [https://stackoverflow.com/questions/55994807/pytesseract-fail-to-recognise-digits-from-image](https://stackoverflow.com/questions/55994807/pytesseract-fail-to-recognise-digits-from-image), which suggested adding the following code to optimise the processsing of the image;
 
 ```python
 import cv2
