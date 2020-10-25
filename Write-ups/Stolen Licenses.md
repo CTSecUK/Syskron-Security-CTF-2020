@@ -8,9 +8,9 @@
 
 ![Details](images/stolen_licenses_details.png)
 
-I'll start by say that this was a tough challenge, especially given it was only worth 300 Ponts!
+I'll start by say that this was a tough challenge, especially given it was only worth 300 Points!
 
-With that in mind, I didn't really start making any progress with it until i'd unlocked a couple of hints, but I'll walk you through the process i took.
+With that in mind, I didn't really start making any progress with it until i'd unlocked a couple of hints, but I'll walk you through the process I took to get there.
 
 I started as it suggested by downlaoding the "licesnee.zip" file fromm the link provided (using the password provided to access the download site).
 
